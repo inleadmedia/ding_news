@@ -173,33 +173,6 @@ function ding_news_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Field: Library (group_audience:nid) */
-  $handler->display->display_options['arguments']['ding_library_nid']['id'] = 'ding_library_nid';
-  $handler->display->display_options['arguments']['ding_library_nid']['table'] = 'field_data_group_audience';
-  $handler->display->display_options['arguments']['ding_library_nid']['field'] = 'ding_library_nid';
-  $handler->display->display_options['arguments']['ding_library_nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['ding_library_nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['ding_library_nid']['default_argument_options']['argument'] = 'all';
-  $handler->display->display_options['arguments']['ding_library_nid']['default_argument_skip_url'] = 0;
-  $handler->display->display_options['arguments']['ding_library_nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['ding_library_nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['ding_library_nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['ding_library_nid']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['ding_library_nid']['not'] = 0;
-  /* Contextual filter: Content: Has taxonomy term ID */
-  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['tid']['default_argument_skip_url'] = 0;
-  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['tid']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['tid']['add_table'] = 0;
-  $handler->display->display_options['arguments']['tid']['require_value'] = 0;
-  $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = 0;
-  $handler->display->display_options['arguments']['tid']['set_breadcrumb'] = 0;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -221,6 +194,13 @@ function ding_news_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
     'und' => 'und',
+  );
+  /* Filter criterion: Content: Show in carousel (field_display) */
+  $handler->display->display_options['filters']['field_display_value']['id'] = 'field_display_value';
+  $handler->display->display_options['filters']['field_display_value']['table'] = 'field_data_field_display';
+  $handler->display->display_options['filters']['field_display_value']['field'] = 'field_display_value';
+  $handler->display->display_options['filters']['field_display_value']['value'] = array(
+    1 => '1',
   );
 
   /* Display: Front page teaser list */
@@ -1103,6 +1083,9 @@ function ding_news_views_default_views() {
   $handler->display->display_options['filters']['sticky']['table'] = 'node';
   $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['value'] = '1';
+
+  /* Display: Carousel list */
+  $handler = $view->new_display('block', 'Carousel list', 'block_1');
   $translatables['ding_news'] = array(
     t('Master'),
     t('Read more'),
@@ -1111,12 +1094,12 @@ function ding_news_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('All'),
     t('Front page teaser list'),
     t('more'),
     t('Dummy if non'),
     t('Feed'),
     t('Library teaser list'),
+    t('All'),
     t('Library Feed'),
     t('Front page teaser highlight'),
     t('Library teaser highlight'),
@@ -1126,6 +1109,7 @@ function ding_news_views_default_views() {
     t('Offset'),
     t('View panes'),
     t('Front page sticky teaser'),
+    t('Carousel list'),
   );
   $export['ding_news'] = $view;
 
