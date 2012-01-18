@@ -35,6 +35,11 @@ function ding_news_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = FALSE;
   /* Field: Content: List image */
   $handler->display->display_options['fields']['field_list_image']['id'] = 'field_list_image';
   $handler->display->display_options['fields']['field_list_image']['table'] = 'field_data_field_list_image';
@@ -1086,6 +1091,17 @@ function ding_news_views_default_views() {
 
   /* Display: Carousel list */
   $handler = $view->new_display('block', 'Carousel list', 'block_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'ding-news-carousel';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = FALSE;
+  $handler->display->display_options['header']['area']['content'] = 'Ding news carousel';
+  $handler->display->display_options['header']['area']['format'] = 'ding_wysiwyg';
+  $handler->display->display_options['header']['area']['tokenize'] = 0;
   $translatables['ding_news'] = array(
     t('Master'),
     t('Read more'),
@@ -1110,6 +1126,7 @@ function ding_news_views_default_views() {
     t('View panes'),
     t('Front page sticky teaser'),
     t('Carousel list'),
+    t('Ding news carousel'),
   );
   $export['ding_news'] = $view;
 
