@@ -131,20 +131,20 @@ function ding_news_views_default_views() {
   $handler->display->display_options['fields']['field_ding_body']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_ding_body']['alter']['replace_spaces'] = 0;
   $handler->display->display_options['fields']['field_ding_body']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_ding_body']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_ding_body']['alter']['nl2br'] = 1;
+  $handler->display->display_options['fields']['field_ding_body']['alter']['max_length'] = '400';
   $handler->display->display_options['fields']['field_ding_body']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_ding_body']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['field_ding_body']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_ding_body']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_ding_body']['alter']['trim'] = 1;
   $handler->display->display_options['fields']['field_ding_body']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_ding_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ding_body']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['field_ding_body']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_ding_body']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_ding_body']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['field_ding_body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['field_ding_body']['settings'] = array(
-    'trim_length' => '200',
+    'trim_length' => '400',
   );
   $handler->display->display_options['fields']['field_ding_body']['field_api_classes'] = 0;
   /* Sort criterion: Content: Post date */
