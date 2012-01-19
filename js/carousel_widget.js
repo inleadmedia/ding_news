@@ -8,6 +8,7 @@
         pauseOnHover: true,
         pauseDuration: 5000
       },
+      width: 460,
       items: 1,
       scroll : {
         items: 1
