@@ -8,7 +8,8 @@
         pauseOnHover: true,
         pauseDuration: 5000
       },
-      width: 460,
+      width: '100%',
+      responsive: true,
       items: 1,
       scroll : {
         items: 1
