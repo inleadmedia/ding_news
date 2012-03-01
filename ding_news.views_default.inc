@@ -683,7 +683,6 @@ function ding_news_views_default_views() {
   /* Display: Full list */
   $handler = $view->new_display('panel_pane', 'Full list', 'panel_pane_1');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'Read more';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
@@ -776,12 +775,15 @@ function ding_news_views_default_views() {
   $handler->display->display_options['fields']['field_category']['table'] = 'field_data_field_category';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['label'] = '';
-  $handler->display->display_options['fields']['field_category']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_category']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_category']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['field_category']['alter']['text'] = '[field_category]';
+  $handler->display->display_options['fields']['field_category']['alter']['make_link'] = 1;
+  $handler->display->display_options['fields']['field_category']['alter']['path'] = 'news/[field_category]';
   $handler->display->display_options['fields']['field_category']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_category']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_category']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_category']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_category']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['field_category']['alter']['trim_whitespace'] = 1;
   $handler->display->display_options['fields']['field_category']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_category']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_category']['alter']['ellipsis'] = 1;
@@ -795,6 +797,7 @@ function ding_news_views_default_views() {
   $handler->display->display_options['fields']['field_category']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_category']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_category']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_category']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_category']['field_api_classes'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -1215,6 +1218,8 @@ function ding_news_views_default_views() {
     t('Items per page'),
     t('- All -'),
     t('Offset'),
+    t('[field_category]'),
+    t('news/[field_category]'),
     t('View panes'),
     t('Front page sticky teaser'),
     t('Carousel list'),
