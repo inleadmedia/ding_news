@@ -1182,7 +1182,7 @@ function ding_news_views_default_views() {
   $handler->display->display_options['fields']['field_ding_body']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['field_ding_body']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_ding_body']['alter']['trim'] = 1;
-  $handler->display->display_options['fields']['field_ding_body']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_ding_body']['alter']['html'] = 1;
   $handler->display->display_options['fields']['field_ding_body']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_ding_body']['element_class'] = 'ding-news-teaser';
   $handler->display->display_options['fields']['field_ding_body']['element_label_colon'] = FALSE;
