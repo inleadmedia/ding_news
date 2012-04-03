@@ -157,7 +157,7 @@ function ding_news_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -502,7 +502,7 @@ function ding_news_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -600,7 +600,7 @@ function ding_news_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -668,7 +668,84 @@ function ding_news_field_default_fields() {
         'module' => 'ting_reference',
         'settings' => array(),
         'type' => 'ting_reference_simple',
-        'weight' => '5',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-ding_news-field_newsletter_terms'
+  $fields['node-ding_news-field_newsletter_terms'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_newsletter_terms',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'newsletter',
+            'parent' => '0',
+          ),
+        ),
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'ding_news',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 8,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser_highlight' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_newsletter_terms',
+      'label' => 'Newsletter categories',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '3',
       ),
     ),
   );
@@ -756,7 +833,7 @@ function ding_news_field_default_fields() {
           'opt_group' => 'auto',
         ),
         'type' => 'ding_content_group_audience_library',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -770,6 +847,7 @@ function ding_news_field_default_fields() {
   t('List image');
   t('Main image');
   t('Materials');
+  t('Newsletter categories');
   t('Show in carousel');
   t('Tags');
 
