@@ -1190,6 +1190,7 @@ function ding_news_views_default_views() {
   $handler->display->display_options['fields']['field_ding_body']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_ding_body']['alter']['preserve_tags'] = '<div> <a>';
   $handler->display->display_options['fields']['field_ding_body']['alter']['html'] = 1;
+
   $handler->display->display_options['fields']['field_ding_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ding_body']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['field_ding_body']['hide_empty'] = 0;
