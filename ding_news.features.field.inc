@@ -127,7 +127,7 @@ function ding_news_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '6',
+          'weight' => '11',
         ),
         'teaser_highlight' => array(
           'label' => 'above',
@@ -197,16 +197,15 @@ function ding_news_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'hidden',
           'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '10',
         ),
         'teaser_highlight' => array(
           'label' => 'above',
@@ -284,7 +283,7 @@ function ding_news_field_default_fields() {
             'trim_length' => '60',
           ),
           'type' => 'text_summary_or_trimmed',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'teaser_highlight' => array(
           'label' => 'hidden',
@@ -342,6 +341,7 @@ function ding_news_field_default_fields() {
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
+        'profile2_private' => FALSE,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -381,6 +381,7 @@ function ding_news_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
+        'default_image' => 0,
         'file_directory' => 'list_image/news',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -391,12 +392,31 @@ function ding_news_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'image',
+        'module' => 'media',
         'settings' => array(
-          'preview_image_style' => 'thumbnail',
+          'allowed_schemes' => array(
+            'public' => 'public',
+          ),
+          'allowed_types' => array(
+            'audio' => 0,
+            'default' => 0,
+            'image' => 'image',
+            'video' => 0,
+          ),
+          'browser_plugins' => array(
+            'dams_media_browser--media_browser_1' => 0,
+            'dams_media_browser--media_browser_2' => 'dams_media_browser--media_browser_2',
+            'dams_media_browser--media_browser_3' => 0,
+            'dams_media_browser--media_browser_4' => 0,
+            'dams_media_browser--media_browser_5' => 0,
+            'ding_content' => 0,
+            'library' => 0,
+            'media_default--media_browser_1' => 0,
+            'upload' => 'upload',
+          ),
           'progress_indicator' => 'throbber',
         ),
-        'type' => 'image_image',
+        'type' => 'media_generic',
         'weight' => '4',
       ),
     ),
@@ -426,6 +446,7 @@ function ding_news_field_default_fields() {
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
+        'profile2_private' => FALSE,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -450,7 +471,7 @@ function ding_news_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '9',
         ),
         'teaser_highlight' => array(
           'label' => 'hidden',
@@ -469,6 +490,7 @@ function ding_news_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
+        'default_image' => 0,
         'file_directory' => 'main_image/news',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -479,12 +501,31 @@ function ding_news_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'image',
+        'module' => 'media',
         'settings' => array(
-          'preview_image_style' => 'thumbnail',
+          'allowed_schemes' => array(
+            'public' => 'public',
+          ),
+          'allowed_types' => array(
+            'audio' => 0,
+            'default' => 0,
+            'image' => 'image',
+            'video' => 0,
+          ),
+          'browser_plugins' => array(
+            'dams_media_browser--media_browser_1' => 0,
+            'dams_media_browser--media_browser_2' => 'dams_media_browser--media_browser_2',
+            'dams_media_browser--media_browser_3' => 0,
+            'dams_media_browser--media_browser_4' => 0,
+            'dams_media_browser--media_browser_5' => 0,
+            'ding_content' => 0,
+            'library' => 0,
+            'media_default--media_browser_1' => 0,
+            'upload' => 'upload',
+          ),
           'progress_indicator' => 'throbber',
         ),
-        'type' => 'image_image',
+        'type' => 'media_generic',
         'weight' => '3',
       ),
     ),
@@ -512,18 +553,15 @@ function ding_news_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'ting_reference',
-          'settings' => array(
-            'view_mode' => 'teaser',
-          ),
-          'type' => 'ting_reference_default',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '8',
         ),
         'teaser_highlight' => array(
           'label' => 'above',
@@ -584,9 +622,8 @@ function ding_news_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'og',
           'settings' => array(),
-          'type' => 'og_list_default',
+          'type' => 'hidden',
           'weight' => '3',
         ),
         'search_result' => array(
@@ -597,10 +634,9 @@ function ding_news_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'og',
           'settings' => array(),
-          'type' => 'og_list_default',
-          'weight' => '1',
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'teaser_highlight' => array(
           'label' => 'hidden',

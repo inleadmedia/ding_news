@@ -692,7 +692,6 @@ function ding_news_views_default_views() {
   /* Display: Full list */
   $handler = $view->new_display('panel_pane', 'Full list', 'panel_pane_1');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'Read more';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
