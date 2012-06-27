@@ -229,7 +229,7 @@ function ding_news_default_page_manager_handlers() {
     $display->content['new-19'] = $pane;
     $display->panels['right'][1] = 'new-19';
   $display->hide_title = PANELS_TITLE_PANE;
-  $display->title_pane = 'new-17';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context'] = $handler;
 
@@ -420,8 +420,12 @@ news/%tid:name',
       ),
     );
     $pane->cache = array(
-      'method' => '0',
-      'settings' => array(),
+      'method' => 'rules',
+      'settings' => array(
+        'granularity' => 'context',
+        'language' => 1,
+        'cache_key' => 'panel_context:page-ding_news:page_ding_news_panel_context',
+      ),
     );
     $pane->style = array(
       'settings' => NULL,

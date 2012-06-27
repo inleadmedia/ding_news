@@ -4,12 +4,6 @@
  * Create news content type and displays.
  */
 
-function ding_news_init() {
-  drupal_add_css(drupal_get_path('theme', 'easybase') . '/css/ding-news.css', 'file');
-  drupal_add_js(drupal_get_path('module', 'ding_news') . '/js/jquery.carouFredSel-5.5.0-packed.js');
-  drupal_add_js(drupal_get_path('module', 'ding_news') . '/js/carousel_widget.js');
-}
-
 /**
  * Implements hook_ding_library_menu_links().
  */
