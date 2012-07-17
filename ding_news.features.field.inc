@@ -461,7 +461,7 @@ function ding_news_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '1',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
